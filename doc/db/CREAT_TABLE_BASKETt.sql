@@ -19,7 +19,10 @@ CREATE TABLE Club (
                       nomClb VARCHAR(50) NOT NULL,
                       addClb VARCHAR(50) NOT NULL,
                       cpClb  VARCHAR(5) NOT NULL,
-                      CONSTRAINT club_pk PRIMARY KEY (idClb)
+                      idUti INT,
+                      nomEquip VARCHAR(50)NOT NULL ,
+                      CONSTRAINT club_pk PRIMARY KEY (idClb),
+                      CONSTRAINT Club_Utilisateur_fk FOREIGN KEY  (idUti) REFERENCES Utilisateur(idUti)
 ) ENGINE = INNODB;
 
 CREATE TABLE Joueur (
