@@ -9,6 +9,8 @@ CREATE TABLE Utilisateur (
                              nomUti VARCHAR(50) NOT NULL,
                              prenomUti VARCHAR(50) NOT NULL,
                              telUti VARCHAR(20),
+
+                             mdpUti VARCHAR(255) NOT NULL;
                              id_pro INT,
                              CONSTRAINT utilisateur_pk PRIMARY KEY (idUti),
                              CONSTRAINT utilisateur_profil_fk FOREIGN KEY (id_pro) REFERENCES Profil(id_pro)

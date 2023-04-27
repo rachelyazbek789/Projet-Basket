@@ -11,8 +11,6 @@ class ClubDAO
         $this->db = $db;
     }
 
-
-
     public function create(Club $club)
     {
 
@@ -45,10 +43,6 @@ class ClubDAO
 
     }
 
-
-
-
-
     public function update(Club $club)
     {
         $stmt = $this->db->prepare("UPDATE clubs SET nom = :nom, ville = :ville WHERE id = :id");
@@ -57,6 +51,4 @@ class ClubDAO
         $stmt->bindParam(":addClb", $club->getaddClb());
         $stmt->execute();
     }
-
-
 }
