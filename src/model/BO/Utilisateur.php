@@ -1,6 +1,6 @@
 <?php
 namespace BO;
 
-class Utilisateur  {
+class Utilisateur   {
 
 }
