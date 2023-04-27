@@ -1,7 +1,7 @@
 <?php
 use BO\Utilisateur;
 
-class  UtilisateurDAO
+class UtilisateurDAO
 {
 
 }
