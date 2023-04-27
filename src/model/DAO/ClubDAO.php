@@ -4,17 +4,20 @@ namespace DAO;
 use BO\Club;
 class ClubDAO
 {
-    private $bdd;
+    private $db;
 
-    public function __construct(\PDO $bdd){
-        if (!is_null($bdd))
-            $this -> bdd = $bdd;}
+    public function __construct($db)
+    {
+        $this->db = $db;
+    }
+
+
 
     public function create(Club $club)
     {
 
         //stmt= statement
-        $stmt = $this->db->prepare("INSERT INTO clubs (nomClb, addClb) VALUES (:nomClb, :addClb)");
+        $stmt = $this->db->prepare("INSERT INTO club (nomClb, addClb) VALUES (:nomClb, :addClb)");
         $stmt->bindParam(":nomClb", $club->getNom());
         $stmt->bindParam(":addClb", $club->getaddClb());
         $stmt->execute();
@@ -31,14 +34,20 @@ class ClubDAO
             }
 
         }
-
+         //rkfker
         foreach ($club->getJoueurs() as $joueur) {
             $stmt = $this->db->prepare("INSERT INTO joueurs (idClb, idUti) VALUES (:idClb, :idUti)");
             $stmt->bindParam(":idClb", $club->getId());
             $stmt->bindParam(":idUti", $joueur->getId());
             $stmt->execute();
         }
+
+
     }
+
+
+
+
 
     public function update(Club $club)
     {
