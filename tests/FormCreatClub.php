@@ -8,8 +8,8 @@
 <body>
 <h1>Création de votre club</h1>
 
-<form action="traits/traitFormCreaClub.php4" method="post"></form>
-      <label for="nomClb">Nom du Club :</label>
+<form action="traits/traitFormCreaClub.php" method="post"></form>
+<label for="nomClb">Nom du Club :</label>
 <input type="text" id="nomClb" name="nomClb" required><br><br>
 
 <label for="addClb">Adresse du Club :</label>
