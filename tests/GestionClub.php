@@ -4,7 +4,7 @@ require_once 'src/traits/traitFormCreaClub.php4';
 
 $bdd = new PDO("mysql:dbname=projet_basket_equipe4;host=localhost;port=3306;charset=UTF8");
 
-
+//jij
 
 /*'<html lang="fr">
 <head>

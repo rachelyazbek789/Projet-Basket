@@ -40,7 +40,7 @@ CREATE TABLE Competition (
                              id_compet INT AUTO_INCREMENT,
                              debut DATE NOT NULL,
                              fin DATE NOT NULL,
-                             nb_matchs_max INT NOT NULL,
+                              nb_matchs_max INT NOT NULL,
                              idClb INT NOT NULL,
                              CONSTRAINT competition_pk PRIMARY KEY (id_compet),
                              CONSTRAINT competition_club_fk FOREIGN KEY (idClb) REFERENCES Club(idClb)

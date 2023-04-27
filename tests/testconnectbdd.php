@@ -14,7 +14,7 @@ require_once 'C:\wamp64\www\Projet_Basket_Loris_Rachel_Jessim_Ilias\src\view\fon
 
 //Infos de votre tableau de connexion
 dump_var($infoBdd, DUMP, 'Info de votre BDD :');
-
+//nlklk,k
 //  Etablissement de la connexion à la Bdd en PDO
 $db = connectBdd($infoBdd);
 dump_var($db, DUMP, 'Objet PDO:');
