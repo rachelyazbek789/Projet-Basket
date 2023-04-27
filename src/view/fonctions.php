@@ -18,8 +18,6 @@ function connectBdd(array $infoBdd): ?\PDO {
 
     //  Composition du DSN
     $dsn="mysql:dbname=$mydbname;host=$hostname;port=$port;charset=$mycharset";
-    //  Instanciation de PDO (le \ pour l'espace de nom racine... peut être utile par la suite)
-
     // renvoi de votre object PDO
 
     $db= new \PDO($dsn, $myusername, $mypassword);
