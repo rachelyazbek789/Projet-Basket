@@ -26,3 +26,4 @@ function connectBdd(array $infoBdd): ?\PDO {
     return $db;
 
 }
+
