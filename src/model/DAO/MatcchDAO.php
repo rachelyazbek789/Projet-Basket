@@ -27,4 +27,8 @@ class MatcchDAO
         $UnMatcch["idCompet"] = $id;
         return $UnMatcch;
     }
+
+    public function delete(Matcch $UnMatcch): Matcch{
+
+    }
 }

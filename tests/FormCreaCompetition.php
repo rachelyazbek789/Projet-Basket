@@ -7,15 +7,23 @@
 </head>
 <body>
 <h1>Création d'une compétition</h1>
-<form action="C:\wamp64\www\Projet_Basket_Loris_Rachel_Jessim_Ilias\src\traits\traitFormCreateCompetition.php" method="post">
-    <label for="DebutCompet" style="margin-right: 20px;">Début de la compétition : </label>
-    <input type="date" id="DebutCompet" name="DebutCompet" required style="width: 300px; height: 25px;"><br><br>
-    <label for="FinCompet" style="margin-right: 40px;">Fin de la compétition :</label>
-    <input type="date" id="FinCompet" name="FinCompet" required style="width: 300px; height: 25px;"><br><br>
-    <label for="NbMatch" style="margin-right: 20px;">Nombre de match que comporte la compétition :</label>
-    <input type="number" id="NbMatch" name="NbMatch" required style="width: 300px; height: 25px;"><br><br>
-    <input type="submit" value="Envoyer" style="width: 300px; height: 50px;">
 
-</form>
+<form action="traits/traitFormCreateCompetition.php" method="post"></form>
+<label for="id_compet">Nom de la compétition</label>
+<input type="text" id="id_compet" name="id_compet" required><br><br>
+
+<label for="debut">Début de la compétition</label>
+<input type="date" id="debut" name="debut" required><br><br>
+
+<label for="fin">Fin de la compétition </label>
+<input type="date" id="fin" name="fin" required><br><br>
+
+<label for="nb_matchs_max">Nombre de match que comporte la compétition</label>
+<input type="text" id="nb_matchs_max" name="nb_matchs_max" required><br><br>
+
+
+<input type="submit" id="submit" name="submit" value="Envoyer">
+
+
 </body>
 </html>

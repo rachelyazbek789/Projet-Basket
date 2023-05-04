@@ -1,6 +1,6 @@
 <?php
 
-require_once 'src/traits/traitFormCreaClub.php4';
+require_once 'src/traits/traitFormCreaClub.php';
 
 $bdd = new PDO("mysql:dbname=projet_basket_equipe4;host=localhost;port=3306;charset=UTF8");
 ?>
