@@ -3,11 +3,11 @@
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Vérifier si les champs requis ont été remplis
-    if(isset($_POST['DebutCompet']) && isset($_POST['FinComept']) && isset($_POST['NbMatch'])){
+    if(isset($_POST['DebutCompet']) && isset($_POST['FinCompet']) && isset($_POST['NbMatch'])){
 
         // Récupérer les valeurs des champs
         $debutCompet = $_POST['DebutCompet'];
-        $finCompet = $_POST['FinComept'];
+        $finCompet = $_POST['FinCompet'];
         $nbMatch = $_POST['NbMatch'];
 
         // Faire quelque chose avec les données récupérées, par exemple :
