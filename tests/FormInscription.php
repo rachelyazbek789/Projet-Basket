@@ -1,4 +1,7 @@
-<form method="post" action="inscription.php">
+
+
+
+<form method="post" action=".././src/traits/inscription.php">
     <label for="nomUti">Nom d'utilisateur:</label>
     <input type="text" name="nomUti" id="nomUti">
 

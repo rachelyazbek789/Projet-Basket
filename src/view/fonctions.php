@@ -1,7 +1,8 @@
 <?php
 
 
-require_once 'C:\wamp64\www\Projet_Basket_Loris_Rachel_Jessim_Ilias\config\appconfig.php';
+require_once 'config/appconfig.php';
+require_once '../view/fonctions.php';
 //connection bdd
 
 function connectBdd(array $infoBdd): ?\PDO {

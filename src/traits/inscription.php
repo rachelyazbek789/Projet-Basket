@@ -1,31 +1,61 @@
 <?php
-// Connexion à la base de données MySQL
-$db = new PDO('mysql:host=localhost;dbname=Projet_Basket_Loris_Rachel_Jessim_Ilias', 'root', '');
+require_once '../model/BO/Utilisateur.php';
+require_once '../model/DAO/UtilisateurDAO.php';
 
-// Récupération des données saisies par l'utilisateur
-$utilisateur = $_POST['nomUti'];
-$telephoneuti = $_POST['telUti'];
-$motdepasseuti = $_POST['mdpUti'];
+$erreur = '';
 
-// Vérification si l'utilisateur existe déjà dans la base de données
-$stmt = $db->prepare('SELECT COUNT(*) FROM Utilisateur WHERE nomUti = :utilisateur OR telUti = :telUti');
-$stmt->bindParam(':utilisateur', $utilisateur);
-$stmt->bindParam(':telUti', $telephoneuti);
-$stmt->execute();
-$count = $stmt->fetchColumn();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $utilisateur = new \BO\Utilisateur();
 
-if ($count > 0) {
-    // Si l'utilisateur existe déjà, afficher un message d'erreur
-    echo 'Un utilisateur avec le même nom d\'utilisateur ou la même adresse e-mail existe déjà.';
-} else {
-    // Si l'utilisateur n'existe pas, ajouter les informations dans la base de données
-    $stmt = $db->prepare('INSERT INTO Utilisateur (nomUti, telUti, password) VALUES (:nomUti, :telUti, :mdpUti)');
-    $stmt->bindParam(':nomUti', $utilisateur);
-    $stmt->bindParam(':telUti', $telephoneuti);
-    $stmt->bindParam(':mdpUti', password_hash($motdepasseuti, PASSWORD_DEFAULT));
-    $stmt->execute();
+    $utilisateur->setPreUti($_POST['prenom']);
+    $utilisateur->setNomUti($_POST['nom']);
 
-    echo 'Inscription réussie !';
+    $utilisateur->setTelUti($_POST['telephone']);
+    $utilisateur->setProfilUti($_POST['profil']);
+    $utilisateur->setMdpUti($_POST['motdepasse']);
 
+    $dao = new DAO\UtilisateurDAO();
+    $resultat = $dao->ajouterUtilisateur($utilisateur);
+
+    if ($resultat) {
+        header('Location: ../../traits/inscription_reussie.php');
+        exit();
+    } else {
+        $erreur = 'Erreur lors de l\'enregistrement de l\'utilisateur.';
+    }
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inscription</title>
+</head>
+<body>
+<h1>Inscription</h1>
+<?php if ($erreur !== ''): ?>
+    <p style="color: red;"><?php echo $erreur; ?></p>
+<?php endif; ?>
+<form method="post" action="">
+    <div>
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom">
+    </div>
+    <div>
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom">
+    </div>
+    <div>
+        <label for="telephone">Téléphone :</label>
+        <input type="number" id="telephone" name="telephone">
+    </div>
+    <div>
+        <label for="motdepasse">Mot de passe :</label>
+        <input type="password" id="motdepasse" name="motdepasse">
+    </div>
+    <div>
+        <input type="submit" value="S'inscrire">
+    </div>
+</form>
+</body>
+</html>
