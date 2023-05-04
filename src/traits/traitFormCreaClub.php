@@ -3,7 +3,7 @@
 use BO\Club;
 use DAO\ClubDAO;
 
-require_once 'C:\wamp64\www\Projet_Basket_Loris_Rachel_Jessim_Ilias\tests\formCreatClub.html';
+require_once 'C:\wamp64\www\Projet_Basket_Loris_Rachel_Jessim_Ilias\tests\formCreatClub.php';
 
 require_once 'C:\wamp64\www\Projet_Basket_Loris_Rachel_Jessim_Ilias\src\view\fonctions.php';
 //récup données du form POST

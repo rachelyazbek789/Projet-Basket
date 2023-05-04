@@ -32,7 +32,7 @@ class ClubDAO
             }
 
         }
-         //rkfker
+
         foreach ($club->getJoueurs() as $joueur) {
             $stmt = $this->db->prepare("INSERT INTO joueurs (idClb, idUti) VALUES (:idClb, :idUti)");
             $stmt->bindParam(":idClb", $club->getId());
@@ -51,4 +51,10 @@ class ClubDAO
         $stmt->bindParam(":addClb", $club->getaddClb());
         $stmt->execute();
     }
+
+
+    //supprimer
+
+
+
 }

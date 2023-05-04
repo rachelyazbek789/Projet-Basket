@@ -1,6 +1,6 @@
 <?php
 
-require_once 'src/traits/traitFormCreaClub.php4';
+/*require_once 'C:\wamp64\www\Projet_Basket_Loris_Rachel_Jessim_Ilias\src\traits\traitFormCreaClub.php';
 
 $bdd = new PDO("mysql:dbname=projet_basket_equipe4;host=localhost;port=3306;charset=UTF8");
 ?>
@@ -10,8 +10,8 @@ $bdd = new PDO("mysql:dbname=projet_basket_equipe4;host=localhost;port=3306;char
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-   <!-- <title>Créer le club</title>
-    <link rel="stylesheet" type="text/css" href="formulaire.css">-->
+    <!-- <title>Créer le club</title>
+     <link rel="stylesheet" type="text/css" href="formulaire.css">-->
 </head>
 <body>
 <h1>Liste des clubs</h1>
@@ -23,7 +23,4 @@ $bdd = new PDO("mysql:dbname=projet_basket_equipe4;host=localhost;port=3306;char
     }
     ?>
 </ul>
-</body>
-
-
-//???????? Je comprend pas , j' essaie de creer une liste de likens  representés par nom de club
+</body>*/
