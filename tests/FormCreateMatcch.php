@@ -8,18 +8,24 @@
 <body>
 <h1>Création d'un match</h1>
 
-<form action="traits/traitCreateMatcch.php" method="post"></form>
-<label for="id_club_un">Nom du club numéro 1</label>
-<input type="text" id="id_club_un" name="id_club_un" required><br><br>
+<form action="traits/traitCreateMatcch.php" method="post">
+    <label for="equipe1">équipe 1:</label>
+    <input type="text" name="equipe1" required><br>
 
-<label for="id_club_deux">Nom du club numéro 2</label>
-<input type="text" id="id_club_deux" name="id_club_deux" required><br><br>
+    <label for="equipe2">équipe 2:</label>
+    <input type="text" name="equipe2" required><br>
 
-<label for="date_match">Date du match :</label>
-<input type="date" id="date_match" name="date_match" required><br><br>
+    <label for="score1">Score de l'équipe 1:</label>
+    <input type="number" name="score1" required><br>
 
+    <label for="score2">Score de l'équipe 2 :</label>
+    <input type="number" name="score2" required><br>
 
-<input type="submit" id="submit" name="submit" value="Envoyer">
+    <label for="date">Date du match :</label>
+    <input type="date" name="date" required><br>
+
+    <input type="submit" value="Créer le match">
+</form>
 
 
 </body>

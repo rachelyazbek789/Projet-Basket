@@ -19,7 +19,7 @@
 <input type="date" id="fin" name="fin" required><br><br>
 
 <label for="nb_matchs_max">Nombre de match que comporte la compétition</label>
-<input type="text" id="nb_matchs_max" name="nb_matchs_max" required><br><br>
+<input type="number" id="nb_matchs_max" name="nb_matchs_max" required><br><br>
 
 
 <input type="submit" id="submit" name="submit" value="Envoyer">
