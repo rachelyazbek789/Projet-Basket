@@ -1,22 +1,29 @@
-<?php
-// Vérifier si le formulaire a été soumis
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Création d'une compétition</title>
+    <link rel="stylesheet" type="text/css" href="formulaire.css">
+</head>
+<body>
+<h1>Création d'une compétition</h1>
 
-    // Vérifier si les champs requis ont été remplis
-    if(isset($_POST['DebutCompet']) && isset($_POST['FinCompet']) && isset($_POST['NbMatch'])){
+<form action="traits/traitFormCreateCompetition.php" method="post"></form>
+<label for="id_compet">Nom de la compétition</label>
+<input type="text" id="id_compet" name="id_compet" required><br><br>
 
-        // Récupérer les valeurs des champs
-        $debutCompet = $_POST['DebutCompet'];
-        $finCompet = $_POST['FinCompet'];
-        $nbMatch = $_POST['NbMatch'];
+<label for="debut">Début de la compétition</label>
+<input type="date" id="debut" name="debut" required><br><br>
 
-        // Faire quelque chose avec les données récupérées, par exemple :
-        echo "Début de la compétition : ".$debutCompet."<br>";
-        echo "Fin de la compétition : ".$finCompet."<br>";
-        echo "Nombre de matchs : ".$nbMatch."<br>";
+<label for="fin">Fin de la compétition </label>
+<input type="date" id="fin" name="fin" required><br><br>
 
-    } else {
-        echo "Tous les champs sont obligatoires.";
-    }
-}
-?>
+<label for="nb_matchs_max">Nombre de match que comporte la compétition</label>
+<input type="text" id="nb_matchs_max" name="nb_matchs_max" required><br><br>
+
+
+<input type="submit" id="submit" name="submit" value="Envoyer">
+
+
+</body>
+</html>

@@ -12,7 +12,20 @@ class CompetitionDAO
         $this ->db = $db;
     }
 
-    public function create(Competition $UneCompetition): Competition
+    public function getAllCompet():?array{
+        $resultSet = NULL;
+        $query = 'SELECT * FROM Competition';
+        $rqtResult = $this ->bdd -> query($query);
+        if ($rqtResult){
+            $rqtResult -> SetFetchMode(\PDO::FETCH_ASSOC);
+            foreach ($rqtResult as $row){
+                $resultSet[] = new Competition($row);
+            }
+        }
+        return $resultSet;
+    }
+
+    public function createCompet(Competition $UneCompetition): Competition
     {
         //stmt= statement
         $stmt = $this->db->prepare("INSERT INTO Competition (debut, fin, nb_matchs_max ) VALUES (:debut, :fin, :nb_matchs_max)");
@@ -25,7 +38,7 @@ class CompetitionDAO
         return $UneCompetition;
     }
 
-    public function insert(Competition $UneCompetition): Competition{
+    public function insertCompet(Competition $UneCompetition): Competition{
         $req= "INSERT INTO Competition(debut, fin, nb_matchs_max) VALUE (:deb, :fi, :nbmatch);";
         $reqPrep = $this ->db ->prepare($req);
         $deb = $UneCompetition["debut"];
