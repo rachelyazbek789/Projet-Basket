@@ -1,7 +1,7 @@
 <?php
 
 namespace DAO;
-use BO\Joueurs;
+use BO\Joueur;
 
 class JoueurDAO
 {
@@ -16,7 +16,7 @@ class JoueurDAO
 
 //ajouter un joueur
 
-function  creatJoueur(Joueurs $joueurs)
+function  creatJoueur(Joueur $joueurs)
 {
     $req = $this->db->prepare("INSERT INTO Joueur (nom,prenom,date_naissance,sexe,idClb) VALUES (:nom, : prenom, : date_naissance, :sexe, :idClb");
     $req->bindParam(":nom", $joueurs->getNom());
@@ -35,7 +35,7 @@ function  creatJoueur(Joueurs $joueurs)
 //modifier le jou eur
 
 
-function  updateJoueur(Joueurs $joueurs)
+function  updateJoueur(Joueur $joueurs)
 {
     $req = $this->db->prepare("UPDATE Joueur SET nom = :nom, prenom= :prenom, date_naissance= :date_naissance,sexe= :sexe,idClb= :idClb WHERE idJou = :idJou");
     $req->bindParam(":idJou", $joueurs->getId());
@@ -52,7 +52,7 @@ function  updateJoueur(Joueurs $joueurs)
 //supprimer
 
 
-function supprimerJoueur(Joueurs $joueurs)
+function supprimerJoueur(Joueur $joueurs)
 {
     $req=$this->db->prepare("DELETE FROM Joueur WHERE idJou= : idJou");
     $req->execute();
