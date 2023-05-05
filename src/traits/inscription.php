@@ -6,18 +6,23 @@ $erreur = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $utilisateur = new \BO\Utilisateur();
+    $utilisateurData = [
+        'prenomUti' => $_POST['prenom'],
+        'nomUti' => $_POST['nom'],
+        'telUti' => $_POST['telephone'],
+        'mdp' => $_POST['motdepasse']
+    ];
 
-    $utilisateur->setPreUti($_POST['prenom']);
-    $utilisateur->setNomUti($_POST['nom']);
+    //parcourt les données soumises dans le formulaire et assigne chaque valeur à la propriété correspondante de l'objet $utilisateur.
+    foreach ($utilisateurData as $prop => $value) {
+        $method = 'set' . ucfirst($prop);
+        $utilisateur->$method($value);
+    }
 
-    $utilisateur->setTelUti($_POST['telephone']);
-    $utilisateur->setProfilUti($_POST['profil']);
-    $utilisateur->setMdpUti($_POST['motdepasse']);
 
     $dao = new DAO\UtilisateurDAO();
     $resultat = $dao->ajouterUtilisateur($utilisateur);
-
-    if ($resultat) {
+    if ($resultat != null) {
         header('Location: ../../traits/inscription_reussie.php');
         exit();
     } else {
@@ -26,36 +31,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Inscription</title>
-</head>
-<body>
-<h1>Inscription</h1>
-<?php if ($erreur !== ''): ?>
-    <p style="color: red;"><?php echo $erreur; ?></p>
-<?php endif; ?>
-<form method="post" action="">
-    <div>
-        <label for="nom">Nom :</label>
-        <input type="text" id="nom" name="nom">
-    </div>
-    <div>
-        <label for="prenom">Prénom :</label>
-        <input type="text" id="prenom" name="prenom">
-    </div>
-    <div>
-        <label for="telephone">Téléphone :</label>
-        <input type="number" id="telephone" name="telephone">
-    </div>
-    <div>
-        <label for="motdepasse">Mot de passe :</label>
-        <input type="password" id="motdepasse" name="motdepasse">
-    </div>
-    <div>
-        <input type="submit" value="S'inscrire">
-    </div>
-</form>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+

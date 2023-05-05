@@ -1,8 +1,7 @@
 <?php
 
 
-require_once 'config/appconfig.php';
-require_once '../view/fonctions.php';
+require_once '../config/appconfig.php';
 //connection bdd
 
 function connectBdd(array $infoBdd): ?\PDO {
