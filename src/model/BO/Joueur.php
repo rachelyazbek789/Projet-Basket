@@ -16,14 +16,18 @@ class Joueur
     private $sexe;
     private $idClb;
 
-    public function __construct($nom, $prenom, $date_naissance, $sexe, $idClb) {
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        $this->date_naissance = $date_naissance;
-        $this->sexe = $sexe;
-        $this->idClb = $idClb;
-    }
+    public function __construct(?array $datas = null )
+    {
 
+        if (!is_null($datas)) {
+            (isset($datas['id'])) ? $this->setID($datas['id']) : $this->setID(null);
+            (isset($datas['nom'])) ? $this->setNom($datas['nom']) : $this->setNom('');
+            (isset($datas['prenom'])) ? $this->setPrenom($datas['prenom']) : $this->setPrenom('');
+            (isset($datas['date_naissance'])) ? $this->setDateNais($datas['date_naissance']) : $this->setDateNais('');
+            (isset($datas['sexe'])) ? $this->setGenre($datas['sexe']) : $this->setGenre('');
+
+        }
+    }
     // Setter
     public function setId($id) {
         $this->id = $id;
@@ -56,8 +60,37 @@ class Joueur
 
 
 
+//setters
 
 
+   public  function  setNom($nom)
+   {
+       $this->nom=$nom;
+
+   }
+
+
+
+    public  function  setPrenom($prenom)
+    {
+        $this->prenom=$prenom;
+
+    }
+
+
+
+    public  function  setDateNais($date_naissance)
+    {
+        $this->date_naissance=$date_naissance;
+
+    }
+
+
+    public  function  setGenre($sexe)
+    {
+        $this->sexe=$sexe;
+
+    }
 
 
 }

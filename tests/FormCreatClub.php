@@ -12,7 +12,7 @@ $requete->execute(array($_POST['nomClb'], $_POST['addClb'], $_POST['cpClb'], $_P
 
 // si club sélectionné
 if (isset($_GET['idClb'])) {
-// Récupérer les informations du club sélectionné
+// Récupérer les informations
 $requete = $bdd->prepare('SELECT * FROM Club WHERE idClb = ?');
 $requete->execute(array($_GET['idClb']));
 $club = $requete->fetch();
@@ -64,10 +64,10 @@ $requete->execute(array($_POST['idClb']));
     ?>
 </ul>
 
-<!-- Affichage -->
+<!-- Affich -->
 <?php
 if (isset($club)) {
-    echo '<h2>Informations du club :</h2>';
+   // echo '<h2>Informations du club :</h2>';
     if ($club && $club['nomClb']) {
         echo '<p>Nom : ' . $club['nomClb'] . '</p>';
     }
