@@ -29,7 +29,7 @@ $requete->execute(array($_POST['idClb']));
 
 
 <form method="post"action="FormCreatClub.php"  >
-    <link rel="stylesheet" href="formulaire.css">
+    <link rel="stylesheet" href="../public/css/formulaire.css">
 
     <h1>Creation Club</h1>
     <label for="nomClb">Nom du Club :</label>

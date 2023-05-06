@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Création d'une compétition</title>
-    <link rel="stylesheet" type="text/css" href="formulaire.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/formulaire.css">
 </head>
 <body>
 <h1>Création d'une compétition</h1>

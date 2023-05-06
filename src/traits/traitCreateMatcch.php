@@ -3,9 +3,10 @@
 use BO\Matcch;
 use DAO\MatcchDAO;
 
-require_once 'C:\wamp64\www\Projet_Basket_Loris_Rachel_Jessim_Ilias\tests\formCreateMatcch.html';
+require_once '../view/écran_création_matcch.php';
 
-require_once 'C:\wamp64\www\Projet_Basket_Loris_Rachel_Jessim_Ilias\src\view\fonctions.php';
+require_once '../view/fonctions.php
+-*4';
 //récup données du form POST
 
 
