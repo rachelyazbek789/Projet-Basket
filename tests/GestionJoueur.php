@@ -13,6 +13,8 @@
     <tr>
         <th>Nom Equipe:</th>
 
+        <th>Joueurs:</th>
+
 
     </tr>
 

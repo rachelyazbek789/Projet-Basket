@@ -1,5 +1,22 @@
 <?php
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*require_once 'C:\wamp64\www\Projet_Basket_Loris_Rachel_Jessim_Ilias\src\traits\traitFormCreaClub.php';
 
 $bdd = new PDO("mysql:dbname=projet_basket_equipe4;host=localhost;port=3306;charset=UTF8");

@@ -9,12 +9,12 @@ class Joueur
 
 
 
-    private $id;
-    private $nom;
-    private $prenom;
-    private $date_naissance;
-    private $sexe;
-    private $idClb;
+    private int $id;
+    private string $nom;
+    private string $prenom;
+    private string $date_naissance;
+    private string $sexe;
+    private int $idClb;
 
     public function __construct(?array $datas = null )
     {

@@ -1,16 +1,18 @@
 <?php
 
 namespace BO;
-
+use BO\Utilisateur;
+use DAO\UtilisateurDAO;
+require_once 'C:\wamp64\www\Projet_Basket_Loris_Rachel_Jessim_Ilias\src\model\BO\Utilisateur.php';
 class Club
 {
     private   $idClb; //modif git
     private string $nomClb;
     private string $addClb;
-    private $cpClb;
+    private string $cpClb="";
 
-    private string $gerants;
-    private $joueurs;
+    private Utilisateur $gerants;
+    private Joueur $joueurs;
 
 
     public function getId()
@@ -37,6 +39,39 @@ class Club
         $this->nomClb = $nomClb;
     }
 
+
+    public  function  setCpClb(string $cpClb)
+    {
+
+        $this->cpClb=$cpClb;
+
+
+    }
+
+
+
+
+
+    public function getJoueur()
+    {
+
+        return $this->joueurs;
+
+    }
+
+    public  function  setJoueur($joueurs)
+    {
+        $this->joueurs=$joueurs;
+
+    }
+
+   public function setGerant($gerants)
+   {
+       $this->gerants=$gerants;
+
+   }
+
+
     public function getaddClb()
     {
         return $this->addClb;
@@ -52,18 +87,12 @@ class Club
         return $this->gerants;
     }
 
-   // public function addGerant(/* type gérant*/ $gerant)
-   // {
-   //     $this->gerants[] = $gerant;
-   // }
+    public function getCpClb()
+    {
 
-   // public function removeGerant(/* type gérent*/ $gerant)
-   // {
-    //    $index = array_search($gerant, $this->gerants);
-    //    if ($index !== false) {
-    //        unset($this->gerants[$index]);
-     //   }
-   // }
+        return $this->cpClb;
+    }
+
 
     public function getJoueurs()
     {
@@ -86,11 +115,31 @@ class Club
 
     public function __construct(?array $datas = null                  /*$nomClb, $addClb,$cpClb*/)
     {//modifier faire avec tableau
+        $ger= array
+
+        ( 'nomUti',
+          'preUti',
+         'telUti',
+         'profilUti',
+
+          'idUti',
+
+          'mdpUti');
+
+        $this->idClb = null;
+        $this->nomClb = "";
+        $this->addClb = "";
+        $this->cpClb ="";
+        $this->gerants= new Utilisateur($ger);
+
+
 
         if (!is_null($datas)) {
             (isset($datas['idClb'])) ? $this->setID($datas['idClb']) : $this->setID(null);
             (isset($datas['nomClb'])) ? $this->setNom($datas['nomClb']) : $this->setNom('');
             (isset($datas['addClb'])) ? $this->setaddClb($datas['addClb']) : $this->setaddClb('');
+            (isset($datas['cpClb'])) ? $this->setaddClb($datas['cpClb']) : $this->setCpClb('');
+            (isset($datas['gerants'])) ? $this->setGerant($datas['gerants']) : $this->setGerant([]);
 
 
             /* (isset($datas['Club1'])) ? $this->setClub1($datas['Club1']) : $this->setClub1('');

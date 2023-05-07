@@ -1,7 +1,13 @@
 
 <?php
+//faire les test dao et bo
+//utiliser les methode de dao , ne pas mettre de requettes prep ailleurs que dans les dao
+//typer  les données dans bo dao
+//changer les chemin d'acces,
 
-$bdd = new PDO('mysql:host=localhost;dbname=projet_basket_equipe4;charset=utf8', 'root', '');
+
+$bdd = connectBdd($infoBdd);
+//new PDO('mysql:host=localhost;dbname=projet_basket_equipe4;charset=utf8', 'root', '');
 
 // si création d'un nouveau club
 if (isset($_POST['nomClb']) && isset($_POST['addClb']) && isset($_POST['cpClb']) && isset($_POST['idUti']) && isset($_POST['nomEquip'])) {
@@ -39,7 +45,10 @@ $requete->execute(array($_POST['idClb']));
     <input type="text" id="addClb" name="addClb" required><br><br>
 
     <label for="cpClb">Code Postal :</label>
-    <input type="text" id="cpClb" name="cpClb" required><br><br>
+    <input type="number" id="cpClb" name="cpClb" required><br><br>
+
+
+
 
     <label for="idUti">Nom du gérant :</label>
     <input type="text" id="idUti" name="idUti" required><br><br>
