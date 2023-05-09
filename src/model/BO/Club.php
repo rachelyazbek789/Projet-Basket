@@ -112,7 +112,7 @@ class Club
         }
     }
 
-
+//,
     public function __construct(?array $datas = null                  /*$nomClb, $addClb,$cpClb*/)
     {//modifier faire avec tableau
         $ger= array

@@ -1,6 +1,6 @@
 <?php
 
-
+//rf
 declare(strict_types=1);
 use BO\Club;
 use DAO\ClubDAO;

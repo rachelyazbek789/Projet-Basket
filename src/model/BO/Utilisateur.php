@@ -3,13 +3,13 @@
 namespace BO;
 class Utilisateur{
     private ?string $nomUti;
-    private ?string $preUti;
+    private ?string $prenomUti;
     private ?int $telUti;
     private ?string $profilUti;
 
     private ?int $idUti;
 
-    private ?string $mdpUti;
+    private ?string $mdp;
 
     public function getIdUti(): ?int {
         return $this-> idUti;
@@ -19,7 +19,7 @@ class Utilisateur{
     }
 
     public function getPreUti():?string {
-        return $this->preUti;
+        return $this->prenomUti;
     }
 
     public function getTelUti(): ?int {
@@ -30,7 +30,7 @@ class Utilisateur{
     }
 
     public function getMdpUti():?string {
-        return $this->mdpUti;
+        return $this->mdp;
     }
 
 
@@ -49,7 +49,7 @@ class Utilisateur{
     }
 
     public function setPreUti(string $preUti):self {
-        $this-> preUti= $preUti;
+        $this-> prenomUti= $preUti;
         return $this;
     }
 
@@ -66,7 +66,7 @@ class Utilisateur{
     }
 
     public function setMdpUti($mdpUti):self {
-        $this->mdpUti = $mdpUti;
+        $this->mdp = $mdpUti;
         return $this;
     }
 
@@ -76,15 +76,15 @@ class Utilisateur{
 
     function __construct(?array $datas = null)
     {
-
+    var_dump($datas);
 
         if(!is_null($datas)){
-            (isset($datas['idUti'])) ? $this->setIdUti($datas['idUti']) : $this->idUti ="";
+            (isset($datas['idUti'])) ? $this->setIdUti($datas['idUti']) : $this->idUti =null;
             (isset($datas['nomUti'])) ? $this->setNomUti($datas['nomUti']) : $this->nomUti ="";
-            (isset($datas['preUti'])) ? $this->setPreUti($datas['preUti']) : $this->preUti ="";
-            (isset($datas['telUti'])) ? $this->setTelUti($datas['telUti']) : $this->telUti ="";
+            (isset($datas['preUti'])) ? $this->setPreUti($datas['preUti']) : $this->prenomUti ="";
+            (isset($datas['telUti'])) ? $this->setTelUti($datas['telUti']) : $this->telUti =null;
             (isset($datas['profilUti'])) ? $this->setProfilUti($datas['profilUti']) : $this->profilUti ="";
-            (isset($datas['mdpUti'])) ? $this->setMdpUti($datas['mdpUti']) : $this->mdpUti ="";
+            (isset($datas['mdpUti'])) ? $this->setMdpUti($datas['mdpUti']) : $this->mdp ="";
         }
     }
 }

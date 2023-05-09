@@ -6,18 +6,19 @@ use BO\Utilisateur;
 
 class UtilisateurDAO {
 
-    private $pdo;
+    private \PDO $pdo;
 
     public function __construct() {
         // Connexion à la base de données MySQL
         $this->pdo = new PDO('mysql:host=localhost;dbname=Projet_Basket_Loris_Rachel_Jessim_Ilias', 'root', '');
+
     }
 
 
     public function ajouterUtilisateur(Utilisateur $utilisateur):?Utilisateur {
 
 
-        $req = "INSERT INTO Utilisateur(nomUti, preUti, telUti, mdpUti) VALUES (:nom, :prenom, :tel, :mdp)";
+        $req = "INSERT INTO Utilisateur(nomUti, prenomUti, telUti, mdp) VALUES (:nom, :prenom, :tel, :mdp)";
         $reqPrep = $this->pdo->prepare($req);
         $res = $reqPrep->execute([
             ":nom"=>$utilisateur->getNomUti(),

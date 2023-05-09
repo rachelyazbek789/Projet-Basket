@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Créer un match</title>
-    <link rel="stylesheet" type="text/css" href="formulaire.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/formulaire.css">
 </head>
 <body>
 <h1>Création d'un match</h1>
 
-<form action="traits/traitCreateMatcch.php" method="post">
+<form action="../src/traits/traitCreateMatcch.php" method="post">
     <label for="equipe1">équipe 1:</label>
     <input type="text" name="equipe1" required><br>
 
